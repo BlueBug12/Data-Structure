@@ -9,9 +9,11 @@ int Ackerman(int m,int n){
 
 int main(){
 	int m,n;
+	cout<<"Please type your input: ";
 	while(!cin.eof()){
 		cin>>m>>n;
 		cout<<Ackerman(m,n)<<endl;
+		cout<<"Please type your input: ";
 	}
 	return 0;
 }
