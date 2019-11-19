@@ -1,8 +1,8 @@
-queueing: queueing.o
-	g++ -o queueing queueing.o
+costco: costco.o
+	g++ -o costco costco.o
 
-queueing.o: queueing.cpp
-	g++ -c queueing.cpp
+costco.o: costco.cpp
+	g++ -c costco.cpp
 
 clean:
-	rm -f queueing.o queueing.exe
+	rm -f costco.o costco.exe

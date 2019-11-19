@@ -1,8 +1,8 @@
-Solitaire: Solitaire.o
-	g++ -o Solitaire Solitaire.o
+solitaire: solitaire.o
+	g++ -o solitaire solitaire.o
 
-Solitaire.o: Solitaire.cpp
-	g++ -c Solitaire.cpp
+solitaire.o: solitaire.cpp
+	g++ -c solitaire.cpp
 
 clean:
-	rm -f Solitaire.o Solitaire.exe
+	rm -f solitaire.o solitaire.exe

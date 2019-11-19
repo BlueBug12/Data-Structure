@@ -50,7 +50,7 @@ _Time complexity: O(1)_
   ```c++
   bool is_empty()
   ```
-* **_push_** : 由於資料的傳入會有優先性的問題，這裡的push並非單純將新的資料推入，而是要從頭 `traverse`，找出是否有可以"插隊"的對象(同一個group_number)，將資料安插在同一組人的前面。若無同組的，則以正常的方式從rear端push，最後將rear加1。`traverse`加上`移動"被插隊的customers"`的步驟每次都會需要完全走訪過一次整個queue(front和rear所包含的範圍)。<br>
+* **_push_** : 由於資料的傳入會有優先性的問題，這裡的push並非單純將新的資料推入，而是要從頭 `traverse`，找出是否有可以"插隊"的對象(同一個group_number)，將資料安插在同一組人的前面。若無同組的，則以正常的方式從rear端push，最後將rear加1。如果新進的顧客是有組員的，`traverse`加上`移動"被插隊的customers"`的步驟會需要完全走訪過一次整個queue(front和rear所包含的範圍)。<br>
 _Time complexity: O(n)_ (n為customer的數量)
   ```c++
   void push(char x,int group_number)
@@ -79,4 +79,4 @@ _Time complexity: O(n)_
 3. 當使用者輸入`EOF`後，跳出迴圈，將上一個步驟所儲存的字元一個個輸出顯示，程式執行結束。
 
 ### Bonus
-與上題類似，_array queue_ 跟 _dynamic linked queue_ 來比較，其實在效率上並無太大差別。無論是 **pop** 的 _Time complexity_ 皆為 **_O(1)_**。_array queue_ 在 **push** 的動作會因為多了一個移動elements的步驟比 _dynamic linked queue_ 還慢一些，但因為都需要 _traverse_ ，所以 _Time complexity_ 皆為 **_O(n)_** 。而因為題目所需的記憶體大小非常少且是固定的(最多26個customers)， _dynamic linked queue_ 動態配置的優勢就無法很明顯地被展現出來。
+與上題類似，_array queue_ 跟 _dynamic linked queue_ 來比較，其實在效率上並無太大差別。 **pop** 的 _Time complexity_ 為 **_O(1)_**，而_array queue_ 在 **push** 的動作會因為多了一個移動elements的步驟比 _dynamic linked queue_ 還慢一些，但因為都需要 _traverse_ ，所以 _Time complexity_ 皆為 **_O(n)_** 。而因為題目所需的記憶體大小非常少且是固定的(最多26個customers)， _dynamic linked queue_ 動態配置的優勢就無法很明顯地被展現出來。

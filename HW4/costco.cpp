@@ -41,6 +41,7 @@ public:
   }
   int traverse(int group_number){//find the same group
     if(is_empty()){return 0;}
+    if(group_number==0){return rear;}//no groups,push back
     int index = front;
     while(index<=rear){
       if(customers[index].group==group_number){return index;}
@@ -69,7 +70,7 @@ int find_group(const int* groups,char x){
 int main(){
 
   int* groups = new int[26];
-  for(int i=0;i<26;++i){groups[i]==0;}
+  for(int i=0;i<26;++i){groups[i]=0;}
   int group_amount;
   cin>>group_amount;
 
