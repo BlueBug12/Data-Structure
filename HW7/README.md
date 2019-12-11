@@ -70,7 +70,7 @@ _Time complexity: O(n+e)_ (e為總edges數)
 ```c++
 void biconnected()
 ```
-* **_biconnected_** : 以DFS為基礎，藉由 _low_ 和 _dfn_ 幫助判斷graph有沒有biconnected component。若當前的node與它parent的low值不一樣，則判斷為bridge。因為一樣使用DFS traverse adjacency lists的所有nodes和2次所有edge。所以 **time complexity為 O(n+2e)=O(n+e)**<br>
+* **_biconnected_** : 以DFS為基礎，藉由 _low_ 和 _dfn_ 幫助判斷graph有沒有biconnected component。_dfn_紀錄DFS走訪的順序，_low(n) = min{dfn(n),min{low(x)|x是n的兒子},min{dfn(x)|(n,x)為cross edge}}_，用來判斷是否有 _biconnected component_ 。若當前的node與它parent的low值不一樣，則判斷為bridge edge。因為一樣使用DFS traverse adjacency lists的所有nodes和2次所有edge。所以 **time complexity為 O(n+2e)=O(n+e)**<br>
 _Time complexity: O(n+e)_
 ```c++
 void biconnected(const int n,const int parent,int* num)
