@@ -11,7 +11,7 @@ public:
   ~max_heap(){
     delete [] heap;
   }
-  bool is_enpty(){
+  bool is_empty(){
     if(heap[0]==0) return 1;
     else return 0;
   }
@@ -26,7 +26,7 @@ public:
     ++heap[0];
   }
   int pop(){
-    if(is_enpty()){
+    if(is_empty()){
       cout<<"the max heap is empty!"<<endl;
       return -1;
     }
