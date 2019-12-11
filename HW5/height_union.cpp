@@ -34,23 +34,16 @@ public:
 
   void heightUnion(const int i,const int j){
 
-    if(s[i]<s[j]){
+    if(s[i]<s[j]){//j has less height
       s[j]=i;
     }
-    else if(s[i]>s[j]){
+    else if(s[i]>s[j]){//i has less height
       s[i]=j;
     }
-    else{
+    else{//equal height
       s[j]=i;
       --s[i];
     }
-  }
-
-  void test(){
-    for(int i=0;i<10;++i){
-      cout<<s[i]<<' ';
-    }
-    cout<<endl;
   }
 
 private:
@@ -70,13 +63,11 @@ int main(){
   }
   string command;
   vector<int>answer;
-  //s.test();
   while(cin>>command){
     if(command=="UNION"){
       int x,y;
       cin>>x>>y;
       s.heightUnion(x,y);
-      s.test();
     }
     else if(command=="FIND"){
       int x;
@@ -84,7 +75,6 @@ int main(){
       int* record;
       *record=0;
       s.collapsingFind(x,record);
-      s.test();
       answer.push_back(*record);
     }
     else if(command=="STOP"){
@@ -96,6 +86,7 @@ int main(){
   }
 
   //print the answer
+  cout<<endl;
   for(int i : answer){
     cout<<i<<endl;
   }

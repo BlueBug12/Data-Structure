@@ -79,6 +79,7 @@ int main(){
     answer[i]=pounds;
   }
   //print the answer
+  cout<<endl;
   for(int i=0;i<n;++i){
     cout<<answer[i]<<endl;
   }

@@ -75,3 +75,6 @@ _Time complexity: O(n)_
 2. 依據不同的command決定要做union或find。若是find，則須將紀錄steps的record用vector紀錄。
 
 3. 若輸入為STOP，跳出迴圈，並將答案依序輸出。
+
+##### Question: heightUnion vs weightUnion
+* 因為被合併在另一個tree之下的所有tree nodes都會增加一個node(新的root)的height，而每個node的height決定了find的速度。因此我們應儘可能減少會被增加height的node數，所以使用weightUnion來配合collapsingFind是比較合理的。
