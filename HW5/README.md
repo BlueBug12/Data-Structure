@@ -18,7 +18,7 @@ max_heap(int size)
 * **_is_empty_** : 若max heap為空，回傳True，否則回傳False <br>
 _Time complexity: O(1)_
 ```c++
-bool is_enpty()
+bool is_empty()
 ```
 * **_push_** : 將新的element n加入max heap <br>
 _Time complexity: O(logN)_ (N為node個數)
