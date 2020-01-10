@@ -104,7 +104,10 @@ int main(){
   int n1,n2;
   cin>>n>>e;
   graph g(n);
-
+  if(n<=1){
+    cout<<endl<<"false"<<endl;
+    return 0;
+  }
   for(int i=0;i<e;++i){
     cin>>n1>>n2;
     g.new_edge(n1,n2);

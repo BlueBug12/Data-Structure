@@ -25,7 +25,7 @@ public:
 
     int inserted_pos=traverse(group_number);
     //move back all elements behind inserted_pos
-    for(int i=rear;i>=inserted_pos;--i){
+    for(int i=rear-1;i>=inserted_pos;--i){
       customers[i+1]=customers[i];
     }
     customers[inserted_pos].name=x;
@@ -40,10 +40,10 @@ public:
     }
   }
   int traverse(int group_number){//find the same group
-    if(is_empty()){return 0;}
+    if(is_empty()){return rear;}
     if(group_number==0){return rear;}//no groups,push back
     int index = front;
-    while(index<=rear){
+    while(index<rear){
       if(customers[index].group==group_number){return index;}
       ++index;
     }
@@ -51,10 +51,11 @@ public:
   }
 
   void print(){
-    for(int i=front;i<rear;++i){
+    for(int i=0;i<27;++i){
       cout<<customers[i].name;
     }
-    cout<<endl;
+    cout<<' '<<front<<' '<<rear<<endl;
+    //cout<<endl;
   }
 private:
   customer* customers;
@@ -96,12 +97,17 @@ int main(){
       cin>>customer;
       int group_number=find_group(groups,customer);
       q.push(customer,group_number);
+      //q.print();
     }
     else if(operation=="DEQUEUE"){
       if(q.is_empty())
         cout<<"The queue is empty!"<<endl;
-      else
+      else{
+        //har a=q.pop();
         answer.push_back(q.pop());
+        //groups[find_group(groups,a)]=0;
+      //  q.print();
+      }
     }
     else{}
     //q.print();
